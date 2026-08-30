@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prem Enterprise | Mobile Accessories</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fb;
+    color:#111827;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    box-shadow:0 2px 20px rgba(0,0,0,.08);
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#ef4444,#2563eb);
+    color:white;
+    display:grid;
+    place-items:center;
+    font-weight:bold;
+    font-size:20px;
+}
+
+.logo h2{
+    line-height:20px;
+}
+
+.logo span{
+    color:#ef2222;
+    font-size:13px;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#222;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:#2563eb;
+}
+
+.cart{
+    border:0;
+    background:#111827;
+    color:white;
+    padding:11px 16px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:600px;
+    background:
+    radial-gradient(circle at 80% 40%,#124b92,transparent 35%),
+    linear-gradient(120deg,#020617,#071936,#031b3b);
+    color:white;
+    overflow:hidden;
+}
+
+.hero-inner{
+    max-width:1200px;
+    margin:auto;
+    min-height:600px;
+    display:grid;
+    grid-template-columns:45% 55%;
+    align-items:center;
+    padding:50px 20px;
+}
+
+.hero-text h1{
+    font-size:clamp(45px,6vw,80px);
+    line-height:.95;
+    margin-bottom:20px;
+}
+
+.red{
+    color:#ef2929;
+}
+
+.hero-text p{
+    font-size:20px;
+    line-height:1.6;
+    color:#d5dbea;
+    max-width:520px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 24px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+}
+
+.btn-red{
+    background:#ef2929;
+    color:white;
+}
+
+.btn-blue{
+    background:#2563eb;
+    color:white;
+}
+
+.hero-image{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    perspective:1000px;
+}
+
+.ai-product{
+    width:min(600px,100%);
+    border-radius:30px;
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55),
+        0 0 50px rgba(37,99,235,.35);
+    transform:rotateY(-7deg) rotateX(3deg);
+    transition:.5s;
+}
+
+.ai-product:hover{
+    transform:rotateY(0) rotateX(0) scale(1.02);
+}
+
+.glow-ring{
+    position:absolute;
+    width:420px;
+    height:420px;
+    border:5px solid #168cff;
+    border-radius:50%;
+    opacity:.5;
+    filter:blur(1px);
+    z-index:-1;
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:75px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.heading h2{
+    font-size:40px;
+}
+
+.heading span{
+    color:#ef2929;
+}
+
+.heading p{
+    color:#6b7280;
+    margin-top:10px;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.category{
+    background:white;
+    border-radius:22px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.category:hover{
+    transform:translateY(-10px);
+}
+
+.category img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.category h3{
+    margin:15px 0;
+}
+
+.category button{
+    background:#2563eb;
+    border:0;
+    color:white;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product{
+    background:white;
+    border-radius:20px;
+    padding:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+}
+
+.product img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.product h3{
+    margin-top:15px;
+}
+
+.product p{
+    color:#6b7280;
+    margin:8px 0;
+}
+
+.price{
+    font-size:21px;
+    font-weight:bold;
+    color:#ef2929;
+    margin:12px 0;
+}
+
+.add{
+    width:100%;
+    padding:12px;
+    border:0;
+    background:#111827;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.add:hover{
+    background:#2563eb;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.service{
+    min-height:330px;
+    border-radius:25px;
+    padding:35px;
+    color:white;
+    overflow:hidden;
+    position:relative;
+}
+
+.transfer{
+    background:
+    linear-gradient(100deg,rgba(0,60,25,.95),rgba(0,120,55,.65)),
+    url("https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80")
+    center/cover;
+}
+
+.biometric{
+    background:
+    linear-gradient(100deg,rgba(0,40,90,.95),rgba(0,100,180,.55)),
+    url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80")
+    center/cover;
+}
+
+.service h3{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.service p{
+    max-width:500px;
+    line-height:1.7;
+    color:#e5e7eb;
+}
+
+.service ul{
+    margin:20px 0;
+    list-style:none;
+}
+
+.service li{
+    margin:10px 0;
+}
+
+.service li::before{
+    content:"✓";
+    color:#4ade80;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+.service button{
+    padding:13px 20px;
+    border:0;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* ================= SAFETY NOTICE ================= */
+
+.notice{
+    max-width:1000px;
+    margin:30px auto 0;
+    padding:18px;
+    border-radius:15px;
+    background:#fff7ed;
+    border:1px solid #fed7aa;
+    color:#9a3412;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:#07172c;
+    color:white;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.contact-box{
+    padding:30px;
+    background:#0d2442;
+    border-radius:20px;
+}
+
+.contact-box h3{
+    margin-bottom:12px;
+}
+
+.contact-box p{
+    color:#b8c4d5;
+    line-height:1.7;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#020817;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* ================= CART ================= */
+
+.cart-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+    padding:20px;
+}
+
+.cart-box{
+    background:white;
+    width:500px;
+    max-width:100%;
+    max-height:80vh;
+    overflow:auto;
+    border-radius:20px;
+    padding:25px;
+}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.close{
+    border:0;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    padding:13px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    margin:20px 0;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* ================= FLOAT BUTTONS ================= */
+
+.floating{
+    position:fixed;
+    right:18px;
+    bottom:20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    z-index:500;
+}
+
+.float-btn{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:white;
+    text-decoration:none;
+    font-size:22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+.whatsapp{
+    background:#22c55e;
+}
+
+.phone{
+    background:#2563eb;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-text p{
+        margin:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-image{
+        margin-top:40px;
+    }
+
+    .categories,
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .nav{
+        height:65px;
+    }
+
+    .logo h2{
+        font-size:18px;
+    }
+
+    .hero{
+        min-height:auto;
+    }
+
+    .hero-inner{
+        min-height:auto;
+        padding:60px 15px;
+    }
+
+    .hero-text h1{
+        font-size:48px;
+    }
+
+    .hero-text p{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+    }
+
+    .categories,
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:55px 15px;
+    }
+
+    .heading h2{
+        font-size:32px;
+    }
+
+    .service{
+        padding:25px;
+    }
+
+    .service h3{
+        font-size:25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+<div class="nav">
+
+    <div class="logo">
+        <div class="logo-icon">PE</div>
+
+        <div>
+            <h2>PREM</h2>
+            <span>ENTERPRISE</span>
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <button class="cart" onclick="openCart()">
+        🛒 Cart (<span id="count">0</span>)
+    </button>
+
+</div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-inner">
+
+    <div class="hero-text">
+
+        <h1>
+            PREM
+            <br>
+            <span class="red">ENTERPRISE</span>
+        </h1>
+
+        <p>
+            Your one-stop shop for mobile accessories,
+            digital payment services and everyday technology.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#shop" class="btn btn-red">
+                🛍 Shop Now
+            </a>
+
+            <a href="#contact" class="btn btn-blue">
+                📞 Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <div class="glow-ring"></div>
+
+        <!-- AI STYLE PRODUCT IMAGE -->
+        <img
+        class="ai-product"
+        src="https://images.unsplash.com/photo-1600086827875-a63b01f1335c?auto=format&fit=crop&w=1200&q=85"
+        alt="Premium headphones">
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="heading">
+    <h2>Shop by <span>Category</span></h2>
+    <p>Choose from our popular mobile accessories.</p>
+</div>
+
+
+<div class="categories">
+
+<div class="category">
+
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80">
+
+<h3>Headphones</h3>
+
+<button onclick="showCategory('Headphones')">
+    Shop Now →
+</button>
+
+</div>
+
+
+<div class="category">
+
+<img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80">
+
+<h3>Neckbands</h3>
+
+<button onclick="showCategory('Neckbands')">
+    Shop Now →
+</button>
+
+</div>
+
+
+<div class="category">
+
+<img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=800&q=80">
+
+<h3>Earbuds</h3>
+
+<button onclick="showCategory('Earbuds')">
+    Shop Now →
+</button>
+
+</div>
+
+
+<div class="category">
+
+<img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80">
+
+<h3>Chargers</h3>
+
+<button onclick="showCategory('Chargers')">
+    Shop Now →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section id="shop">
+
+<div class="container">
+
+<div class="heading">
+
+<h2>Featured <span>Products</span></h2>
+
+<p>
+Quality accessories at affordable prices.
+</p>
+
+</div>
+
+
+<div class="products" id="products">
+
+<!-- PRODUCTS CREATED BY JAVASCRIPT -->
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="heading">
+
+<h2>Our <span>Services</span></h2>
+
+<p>
+Convenient digital services for customers.
+</p>
+
+</div>
+
+
+<div class="services">
+
+
+<!-- MONEY TRANSFER -->
+
+<div class="service transfer">
+
+<h3>
+💸 Money Transfer by Phone Number
+</h3>
+
+<p>
+Assisted money-transfer service through an
+authorized payment provider.
+</p>
+
+<ul>
+
+<li>Fast & convenient</li>
+
+<li>Phone-number based transfer</li>
+
+<li>Secure provider system</li>
+
+<li>Assistance available</li>
+
+</ul>
+
+<button onclick="serviceAlert('Money Transfer')">
+    Send Money →
+</button>
+
+</div>
+
+
+<!-- BIOMETRIC -->
+
+<div class="service biometric">
+
+<h3>
+👆 Bank Cash Withdrawal
+</h3>
+
+<p>
+Assisted withdrawal service through an
+authorized biometric/AEPS provider.
+</p>
+
+<ul>
+
+<li>Authorized banking service</li>
+
+<li>Biometric authentication</li>
+
+<li>Secure process</li>
+
+<li>Quick assistance</li>
+
+</ul>
+
+<button onclick="serviceAlert('Bank Withdrawal')">
+    Know More →
+</button>
+
+</div>
+
+</div>
+
+
+<div class="notice">
+
+🔒 <b>Security:</b>
+Prem Enterprise's website does not collect fingerprints,
+OTP, PINs, passwords or bank credentials.
+Actual banking transactions must be completed through
+an authorized banking/payment system.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="heading">
+
+<h2>
+Contact <span>Prem Enterprise</span>
+</h2>
+
+<p style="color:#b8c4d5;">
+Visit our shop or contact us for products and services.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-box">
+
+<h3>📍 Shop</h3>
+
+<p>
+Prem Enterprise<br>
+Main Market<br>
+Your City, Rajasthan, India
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<h3>📞 Phone</h3>
+
+<p>
++91 98765 43210
+<br>
++91 98765 43210
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<h3>🕒 Opening Hours</h3>
+
+<p>
+Monday – Sunday<br>
+9:00 AM – 9:00 PM
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+© 2026 Prem Enterprise.
+All Rights Reserved.
+
+</footer>
+
+
+<!-- ================= FLOATING BUTTONS ================= -->
+
+<div class="floating">
+
+<a
+class="float-btn whatsapp"
+href="https://wa.me/919876543210"
+target="_blank">
+💬
+</a>
+
+<a
+class="float-btn phone"
+href="tel:+919876543210">
+📞
+</a>
+
+</div>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-modal" id="cartModal">
+
+<div class="cart-box">
+
+<div class="cart-header">
+
+<h2>Your Cart</h2>
+
+<button class="close" onclick="closeCart()">
+×
+</button>
+
+</div>
+
+<div id="cartItems"></div>
+
+<div class="total">
+
+<span>Total</span>
+
+<span id="total">
+₹0
+</span>
+
+</div>
+
+<button
+class="btn btn-blue"
+style="width:100%"
+onclick="sendOrder()">
+
+📲 Send Order Enquiry
+
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* ================= PRODUCTS ================= */
+
+const products = [
+
+{
+name:"Premium Headphones",
+price:1299,
+image:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+description:"Wireless premium headphones"
+},
+
+{
+name:"Bass Neckband",
+price:699,
+image:"https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?auto=format&fit=crop&w=800&q=80",
+description:"Deep bass wireless neckband"
+},
+
+{
+name:"Pro Wireless Earbuds",
+price:999,
+image:"https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=800&q=80",
+description:"True wireless earbuds"
+},
+
+{
+name:"25W Fast Charger",
+price:399,
+image:"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80",
+description:"Fast charging adapter"
+},
+
+{
+name:"Gaming Headphones",
+price:1499,
+image:"https://images.unsplash.com/photo-1599669454699-248893623440?auto=format&fit=crop&w=800&q=80",
+description:"Gaming headphones with microphone"
+},
+
+{
+name:"Sport Neckband",
+price:599,
+image:"https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80",
+description:"Lightweight sports neckband"
+},
+
+{
+name:"Mini Earbuds",
+price:749,
+image:"https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?auto=format&fit=crop&w=800&q=80",
+description:"Compact wireless earbuds"
+},
+
+{
+name:"Dual USB Charger",
+price:349,
+image:"https://images.unsplash.com/photo-1591290619762-c5881b7f8c3e?auto=format&fit=crop&w=800&q=80",
+description:"Dual-port USB charger"
+}
+
+];
+
+
+/* ================= RENDER PRODUCTS ================= */
+
+const productContainer =
+document.getElementById("products");
+
+products.forEach((product,index)=>{
+
+productContainer.innerHTML += `
+
+<div class="product">
+
+<img
+src="${product.image}"
+alt="${product.name}"
+>
+
+<h3>
+${product.name}
+</h3>
+
+<p>
+${product.description}
+</p>
+
+<div class="price">
+₹${product.price}
+</div>
+
+<button
+class="add"
+onclick="addToCart(${index})">
+
+🛒 Add to Cart
+
+</button>
+
+</div>
+
+`;
+
+});
+
+
+/* ================= CART ================= */
+
+let cart=[];
+
+
+function addToCart(index){
+
+cart.push(products[index]);
+
+document.getElementById("count")
+.innerText=cart.length;
+
+alert(
+products[index].name+
+" added to cart!"
+);
+
+}
+
+
+function openCart(){
+
+document.getElementById("cartModal")
+.style.display="flex";
+
+renderCart();
+
+}
+
+
+function closeCart(){
+
+document.getElementById("cartModal")
+.style.display="none";
+
+}
+
+
+function renderCart(){
+
+const items=
+document.getElementById("cartItems");
+
+if(cart.length===0){
+
+items.innerHTML=
+"<p>Your cart is empty.</p>";
+
+document.getElementById("total")
+.innerText="₹0";
+
+return;
+
+}
+
+let total=0;
+
+items.innerHTML="";
+
+cart.forEach((item)=>{
+
+total+=item.price;
+
+items.innerHTML+=`
+
+<div class="cart-item">
+
+<span>
+${item.name}
+</span>
+
+<b>
+₹${item.price}
+</b>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("total")
+.innerText="₹"+total;
+
+}
+
+
+/* ================= ORDER ================= */
+
+function sendOrder(){
+
+if(cart.length===0){
+
+alert("Your cart is empty.");
+
+return;
+
+}
+
+let message=
+"Hello Prem Enterprise,%0A%0AI want to order:%0A";
+
+cart.forEach(item=>{
+
+message+=
+"- "+item.name+
+" ₹"+item.price+
+"%0A";
+
+});
+
+message+=
+"%0APlease confirm availability.";
+
+window.open(
+"https://wa.me/919876543210?text="+message,
+"_blank"
+);
+
+}
+
+
+/* ================= SERVICES ================= */
+
+function serviceAlert(service){
+
+alert(
+service+
+" service is available through an authorized provider. Please contact Prem Enterprise for assistance."
+);
+
+}
+
+
+/* ================= CATEGORY ================= */
+
+function showCategory(category){
+
+document.getElementById("shop")
+.scrollIntoView();
+
+alert(
+"Showing "+category+" products."
+);
+
+}
+
+</script>
+
+</body>
+</html>
