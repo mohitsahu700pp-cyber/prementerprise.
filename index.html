@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Prem Enterprises - Premium mobile accessories including headphones, earbuds, neckbands and charging accessories.">
+
+<title>Prem Enterprises | Premium Mobile Accessories</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --gold:#ffb300;
+    --gold-light:#ffd166;
+    --black:#050505;
+    --dark:#0b0b0b;
+    --card:#121212;
+    --border:#262626;
+    --white:#ffffff;
+    --muted:#9b9b9b;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--black);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#050505;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--gold);
+    border-radius:20px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:76px;
+    padding:0 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    z-index:1000;
+
+    background:rgba(5,5,5,.82);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,179,0,.15);
+}
+
+.logo{
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#ddd;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-button{
+    padding:11px 18px;
+    border-radius:7px;
+    background:var(--gold);
+    color:#000 !important;
+}
+
+.menu{
+    display:none;
+    font-size:27px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    padding:150px 7% 90px;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at 80% 40%,
+        rgba(255,179,0,.16),
+        transparent 27%
+    ),
+    radial-gradient(
+        circle at 15% 85%,
+        rgba(255,179,0,.07),
+        transparent 28%
+    ),
+    #050505;
+}
+
+.hero-content{
+    width:55%;
+    position:relative;
+    z-index:3;
+}
+
+.tag{
+    display:inline-block;
+
+    padding:9px 17px;
+
+    border:1px solid rgba(255,179,0,.4);
+    border-radius:30px;
+
+    color:var(--gold-light);
+
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1.5px;
+
+    margin-bottom:25px;
+
+    background:rgba(255,179,0,.04);
+}
+
+.hero h1{
+    font-size:clamp(50px,7vw,90px);
+    line-height:.94;
+
+    letter-spacing:-5px;
+    font-weight:900;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero-description{
+    max-width:590px;
+
+    margin-top:27px;
+
+    color:#aaa;
+
+    font-size:17px;
+    line-height:1.8;
+}
+
+.buttons{
+    display:flex;
+    gap:14px;
+
+    margin-top:35px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:15px 24px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.primary{
+    background:var(--gold);
+    color:#000;
+}
+
+.primary:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 12px 35px rgba(255,179,0,.25);
+}
+
+.secondary{
+    color:#fff;
+    border:1px solid #444;
+}
+
+.secondary:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+}
+
+/* =========================
+   HERO PRODUCT
+========================= */
+
+.hero-product{
+    position:absolute;
+
+    right:6%;
+
+    width:470px;
+    height:470px;
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    background:#101010;
+
+    border:1px solid #292929;
+
+    box-shadow:
+    0 30px 100px rgba(255,179,0,.13);
+
+    transform:rotate(2deg);
+
+    z-index:2;
+}
+
+.hero-product::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,179,0,.16),
+        transparent 45%
+    );
+
+    pointer-events:none;
+}
+
+.hero-product img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    filter:saturate(.85);
+
+    transition:.7s;
+}
+
+.hero-product:hover img{
+    transform:scale(1.06);
+}
+
+/* floating glow */
+
+.glow{
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    background:rgba(255,179,0,.08);
+
+    filter:blur(80px);
+
+    right:18%;
+    top:35%;
+}
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+section{
+    padding:105px 7%;
+}
+
+.section-title{
+    text-align:center;
+
+    margin-bottom:55px;
+}
+
+.section-title small{
+    color:var(--gold);
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    font-weight:bold;
+}
+
+.section-title h2{
+    margin-top:12px;
+
+    font-size:46px;
+
+    letter-spacing:-1px;
+}
+
+.section-title p{
+    max-width:600px;
+
+    margin:18px auto 0;
+
+    color:#888;
+
+    line-height:1.7;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products{
+    background:#0b0b0b;
+}
+
+.product-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:22px;
+}
+
+.product-card{
+    background:
+    linear-gradient(
+        145deg,
+        #181818,
+        #0c0c0c
+    );
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:17px;
+
+    overflow:hidden;
+
+    transition:.4s;
+}
+
+.product-card:hover{
+    transform:translateY(-9px);
+
+    border-color:
+    rgba(255,179,0,.5);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.5);
+}
+
+.product-image{
+    height:220px;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    background:#080808;
+
+    position:relative;
+
+    margin-bottom:22px;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+}
+
+.product-card:hover
+.product-image img{
+    transform:scale(1.08);
+}
+
+.product-label{
+    position:absolute;
+
+    top:13px;
+    left:13px;
+
+    padding:7px 10px;
+
+    border-radius:20px;
+
+    background:rgba(0,0,0,.72);
+
+    color:var(--gold-light);
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+}
+
+.product-card h3{
+    font-size:20px;
+}
+
+.product-card p{
+    color:#929292;
+
+    font-size:14px;
+
+    line-height:1.65;
+
+    margin:10px 0 19px;
+}
+
+.product-link{
+    color:var(--gold);
+
+    font-size:14px;
+
+    font-weight:bold;
+}
+
+/* =========================
+   WHY US
+========================= */
+
+.why{
+    background:#050505;
+}
+
+.features{
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+}
+
+.feature{
+    padding:30px;
+
+    border-radius:18px;
+
+    background:#101010;
+
+    border:1px solid #202020;
+
+    transition:.35s;
+}
+
+.feature:hover{
+    transform:translateY(-7px);
+
+    border-color:
+    rgba(255,179,0,.45);
+}
+
+.feature-icon{
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:
+    rgba(255,179,0,.09);
+
+    color:var(--gold);
+
+    font-size:24px;
+
+    margin-bottom:20px;
+}
+
+.feature h3{
+    font-size:18px;
+
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#8e8e8e;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+    background:#0d0d0d;
+}
+
+.about-content small{
+    color:var(--gold);
+
+    letter-spacing:3px;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+.about h2{
+    font-size:50px;
+
+    line-height:1;
+
+    letter-spacing:-2px;
+
+    margin:15px 0 25px;
+}
+
+.about p{
+    color:#999;
+
+    line-height:1.9;
+
+    font-size:15px;
+}
+
+.about-box{
+    height:370px;
+
+    border-radius:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(255,179,0,.17),
+        transparent 55%
+    ),
+    #080808;
+
+    border:1px solid #292929;
+}
+
+.about-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:240px;
+    height:240px;
+
+    border:1px solid rgba(255,179,0,.25);
+
+    border-radius:50%;
+}
+
+.about-logo{
+    position:relative;
+    z-index:2;
+}
+
+.about-logo strong{
+    display:block;
+
+    font-size:62px;
+
+    color:var(--gold);
+
+    letter-spacing:-2px;
+}
+
+.about-logo span{
+    color:#999;
+
+    letter-spacing:5px;
+
+    font-size:13px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    padding:80px 7%;
+
+    background:#0b0b0b;
+}
+
+.cta-box{
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:65px 50px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(255,179,0,.13),
+        transparent 55%
+    ),
+    #101010;
+
+    border:1px solid #292929;
+}
+
+.cta-box h2{
+    font-size:43px;
+
+    margin-bottom:15px;
+}
+
+.cta-box p{
+    color:#999;
+
+    max-width:600px;
+
+    margin:auto;
+
+    line-height:1.7;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(255,179,0,.09),
+        transparent 45%
+    ),
+    #050505;
+}
+
+.contact-description{
+    max-width:600px;
+
+    margin:20px auto;
+
+    color:#999;
+
+    line-height:1.8;
+}
+
+.contact-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:35px 7%;
+
+    border-top:1px solid #222;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    color:#777;
+
+    font-size:13px;
+}
+
+footer span{
+    color:var(--gold);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.fade-up{
+    animation:fadeUp 1s ease both;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:1050px){
+
+    .hero-content{
+        width:60%;
+    }
+
+    .hero-product{
+        width:370px;
+        height:370px;
+        right:3%;
+    }
+
+    .product-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .features{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    nav{
+        padding:0 5%;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+
+        top:70px;
+        right:5%;
+
+        width:230px;
+
+        padding:22px;
+
+        background:#101010;
+
+        border:1px solid #292929;
+
+        border-radius:14px;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .hero{
+        padding:
+        130px 5%
+        80px;
+
+        min-height:auto;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .hero h1{
+        font-size:55px;
+        letter-spacing:-3px;
+    }
+
+    .hero-description{
+        font-size:15px;
+    }
+
+    .hero-product{
+        display:none;
+    }
+
+    section{
+        padding:
+        80px 5%;
+    }
+
+    .section-title h2{
+        font-size:36px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+
+        gap:45px;
+    }
+
+    .about h2{
+        font-size:40px;
+    }
+
+    .about-box{
+        height:300px;
+    }
+
+    .cta-box{
+        padding:45px 25px;
+    }
+
+    .cta-box h2{
+        font-size:34px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:550px){
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+        height:240px;
+    }
+
+    .buttons,
+    .contact-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    footer{
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="logo">
+        PREM <span>ENTERPRISES</span>
+    </div>
+
+    <div class="menu"
+         onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <ul class="nav-links"
+        id="navLinks">
+
+        <li>
+            <a href="#home">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="#products">
+                Products
+            </a>
+        </li>
+
+        <li>
+            <a href="#why">
+                Why Us
+            </a>
+        </li>
+
+        <li>
+            <a href="#about">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact"
+               class="nav-button">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero"
+         id="home">
+
+    <div class="glow"></div>
+
+    <div class="hero-content fade-up">
+
+        <div class="tag">
+            PREMIUM MOBILE ACCESSORIES
+        </div>
+
+        <h1>
+            POWER YOUR
+            <br>
+            <span>EVERYDAY.</span>
+        </h1>
+
+        <p class="hero-description">
+            Discover stylish and practical mobile accessories
+            designed for everyday life. From headphones and
+            wireless earbuds to neckbands and charging
+            essentials, Prem Enterprises brings technology
+            closer to you.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#products"
+               class="btn primary">
+                Explore Products
+            </a>
+
+            <a href="#contact"
+               class="btn secondary">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-product">
+
+        <img
+        src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=90"
+        alt="Premium headphones">
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section class="products"
+         id="products">
+
+    <div class="section-title">
+
+        <small>
+            OUR COLLECTION
+        </small>
+
+        <h2>
+            Featured Products
+        </h2>
+
+        <p>
+            Explore everyday technology accessories
+            designed around convenience, style and usability.
+        </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <!-- HEADPHONES -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85"
+                alt="Premium headphones">
+
+                <div class="product-label">
+                    AUDIO
+                </div>
+
+            </div>
+
+            <h3>
+                Premium Headphones
+            </h3>
+
+            <p>
+                Stylish headphones designed for comfortable
+                everyday listening, entertainment and music.
+            </p>
+
+            <div class="product-link">
+                Explore Range →
+            </div>
+
+        </div>
+
+
+        <!-- EARBUDS -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=900&q=85"
+                alt="Wireless earbuds">
+
+                <div class="product-label">
+                    WIRELESS
+                </div>
+
+            </div>
+
+            <h3>
+                Wireless Earbuds
+            </h3>
+
+            <p>
+                Compact wireless audio accessories with a
+                modern and convenient design for daily use.
+            </p>
+
+            <div class="product-link">
+                Explore Range →
+            </div>
+
+        </div>
+
+
+        <!-- NECKBAND -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1578319439584-104c94d37305?auto=format&fit=crop&w=900&q=85"
+                alt="Wireless audio accessory">
+
+                <div class="product-label">
+                    AUDIO
+                </div>
+
+            </div>
+
+            <h3>
+                Wireless Audio
+            </h3>
+
+            <p>
+                Practical wireless audio solutions designed
+                for work, travel and everyday activities.
+            </p>
+
+            <div class="product-link">
+                Explore Range →
+            </div>
+
+        </div>
+
+
+        <!-- CHARGERS -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=900&q=85"
+                alt="Mobile charging accessories">
+
+                <div class="product-label">
+                    POWER
+                </div>
+
+            </div>
+
+            <h3>
+                Charging Accessories
+            </h3>
+
+            <p>
+                Essential charging accessories for keeping
+                your everyday devices powered and ready.
+            </p>
+
+            <div class="product-link">
+                Explore Range →
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WHY US
+========================= -->
+
+<section class="why"
+         id="why">
+
+    <div class="section-title">
+
+        <small>
+            WHY PREM ENTERPRISES
+        </small>
+
+        <h2>
+            Built Around Your Needs
+        </h2>
+
+    </div>
+
+
+    <div class="features">
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ✓
+            </div>
+
+            <h3>
+                Quality Focus
+            </h3>
+
+            <p>
+                We focus on providing practical accessories
+                suitable for everyday technology needs.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⚡
+            </div>
+
+            <h3>
+                Everyday Essentials
+            </h3>
+
+            <p>
+                Find useful accessories covering audio,
+                charging and mobile-device needs.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ₹
+            </div>
+
+            <h3>
+                Value
+            </h3>
+
+            <p>
+                A product range designed to provide useful
+                options across different budgets.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ★
+            </div>
+
+            <h3>
+                Customer First
+            </h3>
+
+            <p>
+                We aim to make product discovery and
+                customer communication simple and convenient.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about"
+         id="about">
+
+
+    <div class="about-content">
+
+        <small>
+            ABOUT PREM ENTERPRISES
+        </small>
+
+        <h2>
+            Technology for
+            <br>
+            everyday life.
+        </h2>
+
+        <p>
+            Prem Enterprises is focused on providing mobile
+            and technology accessories for everyday customers.
+            Our range includes audio accessories, charging
+            solutions and other useful mobile essentials.
+        </p>
+
+        <br>
+
+        <p>
+            Our goal is to make finding practical technology
+            accessories simple, accessible and convenient while
+            maintaining a professional customer experience.
+        </p>
+
+    </div>
+
+
+    <div class="about-box">
+
+        <div class="about-logo">
+
+            <strong>
+                PREM
+            </strong>
+
+            <span>
+                ENTERPRISES
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <div class="cta-box">
+
+        <h2>
+            Upgrade Your Everyday.
+        </h2>
+
+        <p>
+            Looking for headphones, earbuds, neckbands,
+            chargers or other mobile accessories?
+            Get in touch with Prem Enterprises.
+        </p>
+
+        <div class="buttons"
+             style="justify-content:center;">
+
+            <a href="#contact"
+               class="btn primary">
+                Get In Touch
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact"
+         id="contact">
+
+    <div class="section-title">
+
+        <small>
+            GET IN TOUCH
+        </small>
+
+        <h2>
+            Looking for an Accessory?
+        </h2>
+
+    </div>
+
+
+    <p class="contact-description">
+
+        Contact Prem Enterprises to ask about
+        available products, pricing, availability
+        or bulk requirements.
+
+    </p>
+
+
+    <div class="contact-buttons">
+
+        <!-- CHANGE THIS NUMBER -->
+
+        <a
+        class="btn primary"
+        href="https://wa.me/919999999999"
+        target="_blank">
+
+            WhatsApp Us
+
+        </a>
+
+
+        <!-- CHANGE THIS EMAIL -->
+
+        <a
+        class="btn secondary"
+        href="mailto:your@email.com">
+
+            Email Us
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div>
+
+        © 2026
+        <span>
+            Prem Enterprises
+        </span>
+
+        . All Rights Reserved.
+
+    </div>
+
+    <div>
+
+        Mobile Accessories
+        •
+        Audio
+        •
+        Charging
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("active");
+
+}
+
+
+/* CLOSE MOBILE MENU */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+    link.addEventListener(
+        "click",
+        ()=>{
+            document
+            .getElementById("navLinks")
+            .classList
+            .remove("active");
+        }
+    );
+
+});
+
+
+/* SIMPLE SCROLL REVEAL */
+
+const observer =
+new IntersectionObserver(
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+            entry.target.style.transform="translateY(0)";
+
+        }
+
+    });
+
+},
+{
+    threshold:.12
+});
+
+
+document
+.querySelectorAll(
+    ".product-card, .feature, .about-content, .about-box, .cta-box"
+)
+.forEach(el=>{
+
+    el.style.opacity="0";
+
+    el.style.transform="translateY(25px)";
+
+    el.style.transition=
+    "opacity .7s ease, transform .7s ease";
+
+    observer.observe(el);
+
+});
+
+</script>
+
+</body>
+</html>
